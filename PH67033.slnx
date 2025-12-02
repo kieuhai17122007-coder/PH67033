@@ -3,5 +3,6 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="PH67033/PH67033.vcxproj" />
+  <Project Path="code-tren-lop/code-tren-lop.vcxproj" Id="1a987f18-687d-436a-9ef8-7ac869d6c4f1" />
+  <Project Path="PH67033/PH67033.vcxproj" Id="a5112ea4-432c-4d38-a3d2-1999ef1af219" />
 </Solution>
