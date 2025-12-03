@@ -166,15 +166,44 @@ void tinh_tien_dien()
 
 void doi_tien()
 {
-	int tien, 
-	
-
+	int tien;
+	int menhGia[] = { 500, 200, 100, 50, 20, 10, 5, 2, 1 };
+	int soTo[9] = { 0 };
+	printf("Nhap so tien can doi: ");
+	scanf_s("%d", &tien);
+	for (int i = 0; i < 9; i++)
+	{
+		soTo[i] = tien / menhGia[i];
+		tien = tien % menhGia[i];
+	}
+	printf("Ket qua doi tien :\n");
+	for (int i = 0; i < 9; i++)
+	{
+		if (soTo[i] > 0)
+			printf("%d to %d\n", soTo[i], menhGia[i]);
+	}
 }
 
 void tinh_lai_suat_vay_ngan_hang_tra_gop()
 {
 
-	printf("Chuong trinh dang phat trien\n");
+	float so_tien_vay, lai_suat = 5, thoi_gian = 12, tong_tien, tien_tra_theo_thang;
+
+	printf("Nhap so tien vay: ");
+	scanf_s("%f", &so_tien_vay);
+
+	lai_suat = lai_suat / 100;
+	if (lai_suat == 0) {
+		tien_tra_theo_thang = so_tien_vay / thoi_gian;
+	}
+	else tien_tra_theo_thang = (so_tien_vay * lai_suat) / (1 - pow(1 + lai_suat, -thoi_gian));
+	tong_tien = so_tien_vay * ((lai_suat / 100) + 1) * thoi_gian;
+
+	tong_tien = tien_tra_theo_thang * thoi_gian;
+
+	printf("So tien vay: %.f VND\n", so_tien_vay);
+	printf("Tien phai tra moi thang: %.2f VND\n", tien_tra_theo_thang);
+	printf("Tong tien phai tra sau %.f thang vay la: %.f VND\n", thoi_gian, tong_tien);
 
 }
 
@@ -201,7 +230,30 @@ void xay_dung_game_FPOLY_LOTT()
 
 void tinh_toan_phan_so()
 {
-	printf("Chuong trinh dang phat trien\n");
+	int a, b, c, d;
+
+	printf("Nhap tu va mau cua phan so 1: ");
+	scanf_s("%d%d", &a, &b);
+
+	printf("Nhap tu va mau cua phan so 2: ");
+	scanf_s("%d%d", &c, &d);
+
+	int tongTu = a * d + c * b;
+	int tongMau = b * d;
+	printf("Tong: %d/%d\n", tongTu, tongMau);
+
+	int hieuTu = a * d - c * b;
+	int hieuMau = b * d;
+	printf("Hieu: %d/%d\n", hieuTu, hieuMau);
+
+	int tichTu = a * c;
+	int tichMau = b * d;
+	printf("Tich: %d/%d\n", tichTu, tichMau);
+
+	int thuongTu = a * d;
+	int thuongMau = b * c;
+	printf("Thuong: %d/%d\n", thuongTu, thuongMau);
+
 
 }
 
