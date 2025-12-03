@@ -129,15 +129,45 @@ void tinh_tien_cho_quan_karaoke()
 
 void tinh_tien_dien()
 {
-
-	printf("Chuong trinh dang phat trien\n");
-
+	int kwh, tien = 0;
+	printf("Nhap so kWh tieu thu trong thang: ");
+	scanf_s("%d", &kwh);
+	if (kwh < 0)
+	{
+		printf("So kWh khong hop le. Vui long nhap lai.\n");
+		return;
+	}
+	if (kwh <= 50)
+	{
+		tien = kwh * 1678;
+	}
+	else if (kwh <= 100)
+	{
+		tien = 50 * 1678 + (kwh - 50) * 1734;
+	}
+	else if (kwh <= 200)
+	{
+		tien = 50 * 1678 + 50 * 1734 + (kwh - 100) * 2014;
+	}
+	else if (kwh <= 300)
+	{
+		tien = 50 * 1678 + 50 * 1734 + 100 * 2014 + (kwh - 200) * 2536;
+	}
+	else if (kwh <= 400)
+	{
+		tien = 50 * 1678 + 50 * 1734 + 100 * 2014 + 100 * 2536 + (kwh - 300) * 2834;
+	}
+	else
+	{
+		tien = 50 * 1678 + 50 * 1734 + 100 * 2014 + 100 * 2536 + 100 * 2834 + (kwh - 400) * 2927;
+	}
+	printf("So tien dien phai tra trong thang la: %d VND\n", tien);
 }
 
 void doi_tien()
 {
-
-	printf("Chuong trinh dang phat trien\n");
+	int tien, 
+	
 
 }
 
@@ -175,11 +205,65 @@ void tinh_toan_phan_so()
 
 }
 
+void lapChucnang(int chon)
+{
+	system("cls");
+	int tiepTuc = 1;
+	printf("Tiep tuc thuc hien chuc nang nay? [1=Co | 0=Khong]: ");
+	scanf_s("%d", &tiepTuc);
+	while (tiepTuc == 1)
+	{
+		switch(chon)
+		{
+		case 1:
+			kiem_tra_so_nguyen();
+			break;
+		case 2:
+			tim_uoc_so_chung_va_boi_so_chung_cua_hai_so();
+			break;
+		case 3:
+			tinh_tien_cho_quan_karaoke();
+			break;
+		case 4:
+			tinh_tien_dien();
+			break;
+		case 5:
+			doi_tien();
+			break;
+		case 6:
+			tinh_lai_suat_vay_ngan_hang_tra_gop();
+			break;
+		case 7:
+			vay_tien_mua_xe();
+			break;
+		case 8:
+			sap_xem_thong_tin_sinh_vien();
+			break;
+		case 9:
+			xay_dung_game_FPOLY_LOTT();
+			break;
+		case 10:
+			tinh_toan_phan_so();
+			break;
+		case 0:
+			printf("Thoat chuong trinh\n");
+			break;
+		default:
+			printf("Chuc nang ban chon khong hop le. Vui long chon lai!\n");
+			break;
+		}
+		printf("Tiep tuc thuc hien chuc nang nay? [1=Co | 0=Khong]: ");
+		scanf_s("%d", &tiepTuc);
+	}
+
+}
+
 int main()
 {
 	int chon;
 	do
 	{
+		system("cls");
 		printf("===================================================================\n");
 		printf("MENU Chuc Nang: \n");
 		printf("1.Chuc nang so 1: Kiem tra so nguyen.\n");
@@ -196,6 +280,9 @@ int main()
 		printf("===================================================================\n");
 		printf("Vui long chon chuc nang tren MENU [0-10] : ");
 		scanf_s("%d", &chon);
+
+		lapChucnang(chon);
+
 		system("cls");
 
 		switch (chon)
@@ -238,4 +325,5 @@ int main()
 			break;
 		}
 	} while (chon != 0);
+	system("cls");
 }

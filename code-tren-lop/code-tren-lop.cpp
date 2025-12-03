@@ -138,5 +138,21 @@ int main()
 		printf("Hay chon chuc nang [0-3]: ");
 		scanf_s("%d", &chonChucNang);
 		lapChucNang(chonChucNang);
+
+		switch (chonChucNang)
+		{
+		case 1:
+			kiemTraSoNguyen();
+			break;
+		case 2:
+			sapXepMang();
+			break;
+		case 3:
+			demoMang2Chieu();
+			break;
+		default:
+			printf("Chon sai. Chuc nang hop le [0-3]");
+			break;
+		}
 	} while (chonChucNang != 0);
 }
