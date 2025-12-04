@@ -119,7 +119,14 @@ void demoString()
 	printf("%s", _strupr(str));
 	printf("\n");
 
-
+	if (strstr("ABC", "D") != NULL;
+	{
+		printf(strstr("ABC", "D"))
+	}
+	else
+	{
+		printf("NOT FOUND");
+	}
 
 	//puts(name); : tự động thêm dấu xuống dòng
 }
