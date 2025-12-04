@@ -59,6 +59,7 @@ void kiem_tra_so_nguyen()
 			printf("So %d khong phai la so chinh phuong.\n", soNguyen);
 		}
 		printf("Ban co muon tiep tuc chuc nang nay khong (y/n)? ");
+		printf("\n");
 		scanf_s("%c", &Tieptuc);
 	} while (Tieptuc == 'y' || Tieptuc == 'Y');
 }
@@ -103,6 +104,7 @@ void tim_uoc_so_chung_va_boi_so_chung_cua_hai_so()
 		printf("Boi chung nho nhat cua %d va %d la : %d\n", x, y, bcnn);
 
 		printf("Ban co muon tiep tuc chuc nang nay khong (y/n)? ");
+		printf("\n");
 		scanf_s("%c", &Tieptuc);
 	} while (Tieptuc == 'y' || Tieptuc == 'Y');
 
@@ -145,6 +147,7 @@ void tinh_tien_cho_quan_karaoke()
 		printf("Tien phai tra: %lf dong\n", tongTien);
 
 		printf("Ban co muon tiep tuc chuc nang nay khong (y/n)? ");
+		printf("\n");
 		scanf_s("%c", &Tieptuc);
 	} while (Tieptuc == 'y' || Tieptuc == 'Y');
 }
@@ -191,6 +194,7 @@ void tinh_tien_dien()
 		printf("So tien dien phai tra trong thang la: %d VND\n", tien);
 
 		printf("Ban co muon tiep tuc chuc nang nay khong (y/n)? ");
+		printf("\n");
 		scanf_s("%c", &Tieptuc);
 	} while (Tieptuc == 'y' || Tieptuc == 'Y');
 }
@@ -219,6 +223,7 @@ void doi_tien()
 		}
 
 		printf("Ban co muon tiep tuc chuc nang nay khong (y/n)? ");
+		printf("\n");
 		scanf_s("%c", &Tieptuc);
 	} while (Tieptuc == 'y' || Tieptuc == 'Y');
 }
@@ -249,6 +254,7 @@ void tinh_lai_suat_vay_ngan_hang_tra_gop()
 		printf("Tong tien phai tra sau %.f thang vay la: %.f VND\n", thoiGian, tongTien);
 
 		printf("Ban co muon tiep tuc chuc nang nay khong (y/n)? ");
+		printf("\n");
 		scanf_s("%c", &Tieptuc);
 	} while (Tieptuc == 'y' || Tieptuc == 'Y');
 }
@@ -289,6 +295,7 @@ void vay_tien_mua_xe()
 		printf("Tong tien phai tra sau %.0f thang vay la: %.f VND\n", thoiGianVay, tongTienPhaiTra);
 
 		printf("Ban co muon tiep tuc chuc nang nay khong (y/n)? ");
+		printf("\n");
 		scanf_s("%c", &Tieptuc);
 	} while (Tieptuc == 'y' || Tieptuc == 'Y');
 }
@@ -339,6 +346,7 @@ void tinh_toan_phan_so()
 		printf("Thuong: %d/%d\n", thuongTu, thuongMau);
 
 		printf("Ban co muon tiep tuc chuc nang nay khong (y/n)? ");
+		prinf("\n");
 		scanf_s("%c", &Tieptuc);
 	} 
 	while (Tieptuc == 'y' || Tieptuc == 'Y');
