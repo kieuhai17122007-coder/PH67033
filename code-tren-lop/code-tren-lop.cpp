@@ -1,4 +1,4 @@
-#include <stdio.h>
+﻿#include <stdio.h>
 #include <stdlib.h>
 
 void kiemTraSoNguyen()
@@ -92,6 +92,18 @@ void demoMang2Chieu()
 	}
 }
 
+void demoString()
+{
+	char mangKyTu[50];
+	while (getchar() != '\n');
+	printf("Nhap du lieu String: ");
+	fgets(mangKyTu, sizeof(mangKyTu), stdin);
+	printf("%s", mangKyTu);
+	printf("\n");
+	//puts(name); : tự động thêm dấu xuống dòng
+}
+
+
 void lapChucNang(int chonChucNang)
 {
 	int tiepTuc = 1;
@@ -131,7 +143,9 @@ int main()
 		printf("\n");
 		printf("2. Sap xep phan tu mang 1 chieu ");
 		printf("\n");
-		printf("3. De mo Mang 2 Chieu ");
+		printf("3. Demo Mang 2 Chieu ");
+		printf("\n");
+		printf("4. Demo string ");
 		printf("\n");
 		printf("0. Thoat");
 		printf("\n");
@@ -150,8 +164,11 @@ int main()
 		case 3:
 			demoMang2Chieu();
 			break;
+		case 4:
+			demoString();
+			break;
 		default:
-			printf("Chon sai. Chuc nang hop le [0-3]");
+			printf("Chon sai. Chuc nang hop le");
 			break;
 		}
 	} while (chonChucNang != 0);
