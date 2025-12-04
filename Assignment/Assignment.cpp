@@ -346,7 +346,7 @@ void tinh_toan_phan_so()
 		printf("Thuong: %d/%d\n", thuongTu, thuongMau);
 
 		printf("Ban co muon tiep tuc chuc nang nay khong (y/n)? ");
-		prinf("\n");
+		printf("\n");
 		scanf_s("%c", &Tieptuc);
 	} 
 	while (Tieptuc == 'y' || Tieptuc == 'Y');
