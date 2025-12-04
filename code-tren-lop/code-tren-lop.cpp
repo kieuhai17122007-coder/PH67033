@@ -1,5 +1,6 @@
 ﻿#include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 void kiemTraSoNguyen()
 {
@@ -94,43 +95,35 @@ void demoMang2Chieu()
 
 void demoString()
 {
-	char mangKyTu[50];
-	while (getchar() != '\n');
-	printf("Nhap du lieu String: ");
-	fgets(mangKyTu, sizeof(mangKyTu), stdin);
-	printf("%s", mangKyTu);
+		//char mangKyTu[50];
+		//while (getchar() != '\n');
+		//printf("Nhap du lieu String: ");
+		//fgets(mangKyTu, sizeof(mangKyTu), stdin);
+
+		//printf("%s", mangKyTu);
+		//printf("\n");
+
+		//printf("%d", strlen(mangKyTu) - 1);
+		//printf("\n");
+
+	printf("%d", strcmp("A", "B"));
 	printf("\n");
+
+	char str[5] = "ABC";
+	printf("%s", _strrev(str));
+	printf("\n");
+
+	printf("%s", _strlwr(str));
+	printf("\n");
+
+	printf("%s", _strupr(str));
+	printf("\n");
+
+
+
 	//puts(name); : tự động thêm dấu xuống dòng
 }
 
-
-void lapChucNang(int chonChucNang)
-{
-	int tiepTuc = 1;
-	while (tiepTuc == 1)
-	{
-		switch (chonChucNang)
-		{
-		case 1:
-			kiemTraSoNguyen();
-			break;
-		case 2:
-			sapXepMang();
-			break;
-		case 3:
-			demoMang2Chieu();
-			break;
-		default:
-			printf("Chon sai. Chuc nang hop le [0-3]");
-			break;
-		}
-
-		printf("Tiep tuc thuc hien chuc nang nay? [1=Co | 0=Khong]: ");
-		scanf_s("%d", &tiepTuc);
-		system("cls");
-	}
-
-}
 
 int main()
 {
@@ -149,9 +142,8 @@ int main()
 		printf("\n");
 		printf("0. Thoat");
 		printf("\n");
-		printf("Hay chon chuc nang [0-3]: ");
+		printf("Hay chon chuc nang : ");
 		scanf_s("%d", &chonChucNang);
-		lapChucNang(chonChucNang);
 
 		switch (chonChucNang)
 		{

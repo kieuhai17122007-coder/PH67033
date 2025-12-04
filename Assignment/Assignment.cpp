@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
+#include <string.h>
 
 void kiem_tra_so_nguyen()
 {
@@ -373,8 +374,6 @@ int main()
 		printf("===================================================================\n");
 		printf("Vui long chon chuc nang tren MENU [0-10] : ");
 		scanf_s("%d", &chon);
-
-
 		switch (chon)
 		{
 		case 1:
