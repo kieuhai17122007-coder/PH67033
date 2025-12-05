@@ -116,12 +116,9 @@ void demoString()
 	printf("%s", _strlwr(str));
 	printf("\n");
 
-	printf("%s", _strupr(str));
-	printf("\n");
-
-	if (strstr("ABC", "D") != NULL;
+	if (strstr("ABC", "D") != NULL)
 	{
-		printf(strstr("ABC", "D"))
+		printf(strstr("ABC", "D"));
 	}
 	else
 	{
