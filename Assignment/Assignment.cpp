@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#define MAX 100
 
 void kiemTraSoNguyen()
 {
@@ -353,10 +354,76 @@ void vayTienMuaXe()
 	system("cls");
 }
 
+struct sinhVien
+{
+	char hoten[50];
+	float diem;
+	char hocluc[20];
+};
 void sapXepThongTinSinhVien()
 {
+	char tiepTuc;
+	do
+	{
+		system("cls");
+		int n;
+		struct sinhVien sv[MAX], temp;
+		
+		printf("============================================\n");
+		printf("	CHUC NANG 8: SAP XEP THONG TIN SINH VIEN\n");
+		printf("============================================\n");
 
-	printf("Chuong trinh dang phat trien\n");
+		printf(" - Nhap so luong sinh vien: ");
+		scanf_s("%d", &n);
+		getchar();
+		
+		for (int i = 0; i < n; i++)
+		{
+			printf(" - Nhap ho ten sinh vien %d: ", i + 1);
+			fgets(sv[i].hoten, sizeof(sv[i].hoten), stdin);
+			sv[i].hoten[strcspn(sv[i].hoten, "\n")] = 0;
+			printf(" - Nhap diem sinh vien %d: ", i + 1);
+			scanf_s("%f", &sv[i].diem);
+			getchar();
+			if (sv[i].diem >= 8)
+				strcpy_s(sv[i].hocluc, "Gioi");
+			else if (sv[i].diem >= 6.5)
+				strcpy_s(sv[i].hocluc, "Kha");
+			else if (sv[i].diem >= 5)
+				strcpy_s(sv[i].hocluc, "Trung Binh");
+			else
+				strcpy_s(sv[i].hocluc, "Yeu");
+		}
+		for (int i = 0; i < n - 1; i++)
+		{
+			for (int j = i + 1; j < n; j++)
+			{
+				if (sv[i].diem < sv[j].diem)
+				{
+					temp = sv[i];
+					sv[i] = sv[j];
+					sv[j] = temp;
+				}
+			}
+		}
+		printf("\n");
+		printf("Danh sach sinh vien sau khi sap xep:\n");
+		printf("-------------------------------------------------\n");
+		printf("| Ho Ten | So Diem | Hoc Luc |\n");
+		printf("-------------------------------------------------\n");
+		for (int i = 0; i < n; i++)
+		{
+			printf("| %-28s | %-6.1f | %-14s |\n", sv[i].hoten, sv[i].diem, sv[i].hocluc);
+		}
+		printf("-------------------------------------------------\n");
+
+		printf("---------------------------------------------\n");
+		printf("Ban co muon tiep tuc chuc nang nay khong (y/n)? ");
+		printf("\n");
+		scanf_s(" %c", &tiepTuc);
+	} while (tiepTuc == 'y' || tiepTuc == 'Y');
+	system("cls");
+	
 
 }
 
@@ -426,27 +493,30 @@ void tinhToanPhanSo()
 
 		int a, b, c, d;
 
-		printf("Nhap tu va mau cua phan so 1: ");
+		printf("============================================\n");
+		printf("	CHUC NANG 10: TINH TOAN PHAN SO\n");
+		printf("============================================\n");
+		printf(" - Nhap tu va mau cua phan so 1: ");
 		scanf_s("%d%d", &a, &b);
 
-		printf("Nhap tu va mau cua phan so 2: ");
+		printf(" - Nhap tu va mau cua phan so 2: ");
 		scanf_s("%d%d", &c, &d);
 
 		int tongTu = a * d + c * b;
 		int tongMau = b * d;
-		printf("Tong: %d/%d\n", tongTu, tongMau);
+		printf(" => Tong: %d/%d\n", tongTu, tongMau);
 
 		int hieuTu = a * d - c * b;
 		int hieuMau = b * d;
-		printf("Hieu: %d/%d\n", hieuTu, hieuMau);
+		printf(" => Hieu: %d/%d\n", hieuTu, hieuMau);
 
 		int tichTu = a * c;
 		int tichMau = b * d;
-		printf("Tich: %d/%d\n", tichTu, tichMau);
+		printf(" => Tich: %d/%d\n", tichTu, tichMau);
 
 		int thuongTu = a * d;
 		int thuongMau = b * c;
-		printf("Thuong: %d/%d\n", thuongTu, thuongMau);
+		printf(" => Thuong: %d/%d\n", thuongTu, thuongMau);
 
 		printf("Ban co muon tiep tuc chuc nang nay khong (y/n)? ");
 		printf("\n");
