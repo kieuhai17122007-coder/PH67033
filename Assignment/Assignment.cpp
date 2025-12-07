@@ -415,7 +415,6 @@ void sapXepThongTinSinhVien()
 		{
 			printf("| %-28s | %-6.1f | %-14s |\n", sv[i].hoten, sv[i].diem, sv[i].hocluc);
 		}
-		printf("-------------------------------------------------\n");
 
 		printf("---------------------------------------------\n");
 		printf("Ban co muon tiep tuc chuc nang nay khong (y/n)? ");
@@ -423,8 +422,6 @@ void sapXepThongTinSinhVien()
 		scanf_s(" %c", &tiepTuc);
 	} while (tiepTuc == 'y' || tiepTuc == 'Y');
 	system("cls");
-	
-
 }
 
 void xayDungGame_FPOLY_LOTT()
@@ -439,9 +436,9 @@ void xayDungGame_FPOLY_LOTT()
 		do
 		{
 			may2 = 1 + rand() % 15;
-		} while (may2 = may1);
+		} while (may2 == may1);
 		printf("============================================\n");
-		printf("	CHUC NANG 9: GAME FPOLY LOTT\N");
+		printf("	CHUC NANG 9: GAME FPOLY LOTT\n");
 		printf("============================================\n");
 		printf(" - Nhap so thu nhat (1-15): ");
 		scanf_s("%d", &so1);
@@ -468,7 +465,7 @@ void xayDungGame_FPOLY_LOTT()
 
 		if (trung == 0)
 		{
-			printf(" CHuc ban may man lan sau!\n");
+			printf(" Chuc ban may man lan sau!\n");
 		}
 		else if (trung == 1)
 			printf(" CHUC MUNG! BAN DA TRUNG GIAI NHI!\n");

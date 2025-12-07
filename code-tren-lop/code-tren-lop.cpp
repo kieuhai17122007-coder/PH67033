@@ -128,7 +128,6 @@ void demoString()
 	//puts(name); : tự động thêm dấu xuống dòng
 }
 
-
 int main()
 {
 	int chonChucNang;
