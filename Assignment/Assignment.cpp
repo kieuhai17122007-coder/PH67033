@@ -1,8 +1,6 @@
-﻿// PH67033_Kiều Đức Hải.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+﻿
 
 #include <stdio.h>
-#include <math.h>
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
@@ -280,7 +278,7 @@ void tinhLaiSuatVayNganHangTraGop()
 
 		int conLai = tienVay;
 
-		for (i = 1; i <= 12; i++) 
+		for (i = 1; i <= 12; i++)
 		{
 			int laiThang = conLai * 5 / 100;
 			int gocThang = tienVay / 12;
@@ -331,9 +329,9 @@ void vayTienMuaXe()
 		printf(" => So tien vay ngan hang	 : %d dong\n", tienVay);
 		printf("Thang | Lai phai tra | Goc phai tra | Tong phai tra\n");
 		printf("------|--------------|--------------|--------------\n");
-		
+
 		int conLai = tienVay;
-		for ( i = 0; i < 288; i++)
+		for (i = 0; i < 288; i++)
 		{
 			int laiThang = conLai * 72 / 1200;
 			int tongThang = laiThang + gocMoiThang;
@@ -354,21 +352,23 @@ void vayTienMuaXe()
 	system("cls");
 }
 
-struct sinhVien
-{
-	char hoten[50];
-	float diem;
-	char hocluc[20];
-};
+
 void sapXepThongTinSinhVien()
 {
 	char tiepTuc;
 	do
 	{
 		system("cls");
+		struct sinhVien
+		{
+			char hoten[50];
+			float diem;
+			char hocluc[20];
+		};
+
 		int n;
 		struct sinhVien sv[MAX], temp;
-		
+
 		printf("============================================\n");
 		printf("	CHUC NANG 8: SAP XEP THONG TIN SINH VIEN\n");
 		printf("============================================\n");
@@ -376,7 +376,7 @@ void sapXepThongTinSinhVien()
 		printf(" - Nhap so luong sinh vien: ");
 		scanf_s("%d", &n);
 		getchar();
-		
+
 		for (int i = 0; i < n; i++)
 		{
 			printf(" - Nhap ho ten sinh vien %d: ", i + 1);
@@ -409,11 +409,11 @@ void sapXepThongTinSinhVien()
 		printf("\n");
 		printf("Danh sach sinh vien sau khi sap xep:\n");
 		printf("-------------------------------------------------\n");
-		printf("| Ho Ten | So Diem | Hoc Luc |\n");
+		printf("| %-3s | %-15s | %-10s | %-8s |\n", "STT", "Ho Ten", "So Diem", "Hoc Luc");
 		printf("-------------------------------------------------\n");
 		for (int i = 0; i < n; i++)
 		{
-			printf("| %-28s | %-6.1f | %-14s |\n", sv[i].hoten, sv[i].diem, sv[i].hocluc);
+			printf("| %-3d | %-15s | %-10.1f | %-8s |\n", i + 1, sv[i].hoten, sv[i].diem, sv[i].hocluc);
 		}
 
 		printf("---------------------------------------------\n");
@@ -518,8 +518,7 @@ void tinhToanPhanSo()
 		printf("Ban co muon tiep tuc chuc nang nay khong (y/n)? ");
 		printf("\n");
 		scanf_s(" %c", &Tieptuc);
-	} 
-	while (Tieptuc == 'y' || Tieptuc == 'Y');
+	} while (Tieptuc == 'y' || Tieptuc == 'Y');
 	system("cls");
 }
 
@@ -529,7 +528,7 @@ int main()
 	do
 	{
 		printf("==============================================================\n");
-		printf("				MENU CHUC NANG \n");
+		printf("		     MENU CHUC NANG \n");
 		printf("==============================================================\n");
 		printf("1.Chuc nang so 1: Kiem tra so nguyen.\n");
 		printf("2.Chuc nang so 2: Tim uoc so chung va boi so chung cua hai so.\n");
